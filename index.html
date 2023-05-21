@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url='https://drive.google.com/drive/folders/1K8lURHP1gGrAvtPOF5Nw-4CV_y7yhy8l?usp=sharing'" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Folder LEMON 2023</title>
 </head>
 <body>
+    <div id="tulisan">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            var url = "https://drive.google.com/drive/folders/1K8lURHP1gGrAvtPOF5Nw-4CV_y7yhy8l?usp=sharing"; // url tujuan
+            var count = 5; // dalam detik
+            function countDown() {
+                if (count > 0) {
+                    count--;
+                    var waktu = count + 1;
+                    $('#tulisan').html('Anda akan dialihkan, silahkan tunggu' + ' dalam ' + waktu + ' detik.');
+                    setTimeout("countDown()", 1000);
+                } else {
+                    window.location.href = url;
+                }
+            }
+            countDown();
+        </script>
 </html>
